@@ -3,7 +3,9 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-image: url(/css/venice6.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 .rowOfRequest {
     flex-direction: row;
@@ -26,4 +28,15 @@ body {
     background-image: url(/css/crown7.gif);
     height: 200px;
     width: 200px;
+}
+
+.font-bold {
+    font-weight: 700;
+    color: white;
+}
+
+h2 {
+    font-size: inherit;
+    color: white;
+    font-weight: inherit;
 }
