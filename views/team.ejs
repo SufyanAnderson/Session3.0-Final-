@@ -2,7 +2,6 @@
 <div>
 <!---->
 
-
 <form action="/post/uploadVideo" enctype="multipart/form-data" method="POST">
     <div class="mb-3">
         <label for="title" class="form-label videoUploadForm">Video Title</label>
@@ -21,22 +20,23 @@
   </form>
   
 
-  <section class=" dark:bg-gray-900">
+  <section class="teamSection">
+  <section class=" dark:bg-gray-900 ">
     <div class="backgroundAnimation ">
       
     </div>
-    <h2 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">Kings of the Hill</h2>
+    <h2 class="text-3xl font-semibold text-center text-white capitalize lg:text-4xl dark:text-white">Kings of the Hill</h2>
     <div>
     <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div class="rounded-lg shadow-lg max-w-sm">
           <a href="#!">
             <video controls>
               <source src="<%= uploads[0].url %>" type="video/mp4">
             </video>
           </a>
           <div class="p-6">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-            <p class="text-gray-700 text-base mb-4">
+            <h5 class="text-white text-xl font-medium mb-2">Card title</h5>
+            <p class="text-white text-base mb-4">
               Some quick example text to build on the card title and make up the bulk of the card's
               content.
             </p>
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <h2 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">videos</h2>
+    <h2 class="text-3xl font-semibold text-center text-white capitalize lg:text-4xl dark:text-white">videos</h2>
     <section class="flex flex-row">
     <%for (let i=1; i < uploads.length; i++) { %>
     <div class="container px-6 py-8 mx-auto flex flex-row">
@@ -88,5 +88,6 @@
 
 
         </section>
+      </section>
 </div>
 
