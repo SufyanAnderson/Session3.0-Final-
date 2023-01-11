@@ -117,13 +117,9 @@
       
       <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><%= post.requests[i] %></h5>
       <div class="flex mt-4 space-x-3 md:mt-6">
-        <form
-        action="/post/acceptRequest/<%= post.requests[i] %>?_method=PUT"
-        method="POST"
-        >
-        <button class="btn btn-primary accept" id="<%= post.id %>" type="submit">Accept</button>
-     
-      </form>
+
+        
+      <button class="btn btn-primary" onclick="acceptRequest('<%= post.id %>','<%= requests[i] %>')">Accept</button>
         <button class="btn btn-primary" onclick="denyRequest('<%= post.id %>','<%= requests[i] %>')">Deny</button>
           
         </div>

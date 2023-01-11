@@ -7,7 +7,7 @@ const { ObjectID } = require('mongodb');
 
 exports.getTeam = async (req, res) => {
     try {
-     //  const post = await Post.find({ _id: req.params.id });
+    // const post = await Post.find({ _id: req.params.id });
      const uploads = await Upload.find({ user: ObjectID(req.user.group) });
      const uploadUrls = await Upload.findById(req.params.id);
      const sortedLikes = uploads.sort((a,b )=> b.likes - a.likes)

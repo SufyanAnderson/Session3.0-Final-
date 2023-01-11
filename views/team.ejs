@@ -21,39 +21,9 @@
   
 
   <section class="teamSection">
-  <section class=" dark:bg-gray-900 ">
-    <div class="backgroundAnimation ">
-      
-    </div>
-    <h2 class="text-3xl font-semibold text-center text-white capitalize lg:text-4xl dark:text-white">Kings of the Hill</h2>
-    <div>
-    <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg max-w-sm">
-          <a href="#!">
-            <video controls>
-              <source src="<%= uploads[0].url %>" type="video/mp4">
-            </video>
-          </a>
-          <div class="p-6">
-            <h5 class="text-white text-xl font-medium mb-2">Card title</h5>
-            <p class="text-white text-base mb-4">
-              Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-            <form
-            class="col-1"
-            action="/post/likeVideo/<%= uploads[0]._id %>?_method=PUT"
-            method="POST"
-          >
-            <button class="btn btn-primary fa fa-heart" type="submit"></button>
-          </form>
-          <h2>Likes: <%= uploads[0].likes %></h2>  
-          </div>
-        </div>
-      </div>
-    </div>
+  
 
-    <h2 class="text-3xl font-semibold text-center text-white capitalize lg:text-4xl dark:text-white">videos</h2>
+    <h2 class="text-3xl font-semibold text-center text-white capitalize lg:text-4xl">videos</h2>
     <section class="flex flex-row">
     <%for (let i=1; i < uploads.length; i++) { %>
     <div class="container px-6 py-8 mx-auto flex flex-row">

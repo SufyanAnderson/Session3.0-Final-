@@ -116,19 +116,48 @@ module.exports = {
       console.log(err);
     }
   },
+  // acceptRequest: async (req, res) => {
+  //   try {
+  //    const acceptedUser = await User.findById(req.params.id)  
+  //    acceptedUser.group = req.user.group 
+  //    acceptedUser.save() 
+  //    console.log(user.)
+  //     await Post.findOneAndUpdate(
+  //       { _id: postId },
+  //       {
+  //         $pull: { requests: [req.params.id]},
+  //         $push: {accepted: [req.params.id]}
+  //        }
+  //     );
+  //     res.redirect(`/post/${postId}`);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
   acceptRequest: async (req, res) => {
+    console.log(req.body._id, 'this is request deny')
+    const post = await Post.findById(req.body._id).lean()
+    const acceptedUser = await User.findById(req.body.userid)  
+    console.log(acceptedUser)
+    console.log(req.user.group)
+    acceptedUser.group = req.body._id 
+    acceptedUser.save() 
+    // console.log(acceptedUser)
+    // // let postId = req.params.id.split(",")[0]
+    // // let userId = req.params.id.split(",")[1]
+    // let requests = post.requests
+    // console.log(req.body.userid, requests)
+    // requests = requests.filter(request => !(request == req.body.userid))
+
     try {
-     const acceptedUser = await User.findById(req.params.id)  
-     acceptedUser.group = req.user.group 
-     acceptedUser.save() 
-      await Post.findOneAndUpdate(
-        { _id: postId },
+      const returnValue = await Post.findOneAndUpdate(
+        { _id: req.body._id },
         {
-          $pull: { requests: [req.params.id]},
-          $push: {accepted: [req.params.id]}
+          $pull: { requests: [req.body.userid]},
+          $push: {accepted: [req.body.userid]}
          }
       );
-      res.redirect(`/post/${postId}`);
+      res.redirect(`/post/${req.body._id}`);
     } catch (err) {
       console.log(err);
     }

@@ -19,7 +19,7 @@ router.post('/uploadVideo', storage.single('file'), uploadController.uploadVideo
 
 router.put("/joinPost/:id", postsController.joinPost);
 
-router.put("/acceptRequest/:id", postsController.acceptRequest);
+router.put("/acceptRequest", postsController.acceptRequest);
 
 router.put("/likeVideo/:id", postsController.like);
 
