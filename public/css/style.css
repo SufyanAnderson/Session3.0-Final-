@@ -56,5 +56,24 @@ h2 {
 }
 
 .mb-3 {
+    color: rgb(0, 0, 0);
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
     color: white;
+}
+
+.form-text {
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #ffffff;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.black-btn {
+    color: black;
 }
